@@ -248,7 +248,7 @@
 }
 
 - (void)runJavascript:(NSString *)command {
-    [[self webView] performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:command waitUntilDone:NO];
+    [self.webViewEngine evaluateJavaScript:command completionHandler:nil];
 }
 
 -(NSString*)toJSON:(NSDictionary *)data {
